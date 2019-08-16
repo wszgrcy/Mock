@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* global require, module, window */
 	var Handler = __webpack_require__(1)
@@ -61,7 +61,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var RE = __webpack_require__(20)
 	var toJSONSchema = __webpack_require__(23)
 	var valid = __webpack_require__(25)
-
+	//doc 先定义自己的xhr
 	var XHR
 	if (typeof window !== 'undefined') XHR = __webpack_require__(27)
 
@@ -110,8 +110,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        template = rtype
 	        rtype = undefined
 	    }
+	    //doc 把浏览器自带的,代替为自己的
 	    // 拦截 XHR
 	    if (XHR) window.XMLHttpRequest = XHR
+	    //doc 保存模拟的请求值
 	    Mock._mocked[rurl + (rtype || '')] = {
 	        rurl: rurl,
 	        rtype: rtype,
@@ -122,9 +124,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Mock
 
-/***/ },
+
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* 
 	    ## Handler
@@ -667,9 +670,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Handler
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Constant
@@ -705,9 +708,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // RE_KEY: /^key$/
 	}
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Utilities
@@ -836,9 +839,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Util
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 		## Parser
@@ -912,9 +915,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	}
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## Mock.Random
@@ -941,9 +944,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Random
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Basics
@@ -1072,9 +1075,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Date
@@ -1218,9 +1221,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* global document  */
 	/*
@@ -1506,9 +1509,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)(module)))
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(module) {
 		if(!module.webpackPolyfill) {
@@ -1522,9 +1525,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## Color
@@ -1664,9 +1667,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Color Convert
@@ -1846,9 +1849,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	}
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Color 字典数据
@@ -1927,9 +1930,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## Text
@@ -2053,9 +2056,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## Helpers
@@ -2174,9 +2177,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	}
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Name
@@ -2266,9 +2269,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	}
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Web
@@ -2347,9 +2350,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	}
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## Address
@@ -2399,9 +2402,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // state: function() {},
 	}
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 	    ## Address 字典数据
@@ -6472,9 +6475,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = DICT_FIXED
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## Miscellaneous
@@ -6582,9 +6585,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	}
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var Parser = __webpack_require__(21)
 	var Handler = __webpack_require__(22)
@@ -6593,9 +6596,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		Handler: Handler
 	}
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	// https://github.com/nuysoft/regexp
 	// forked from https://github.com/ForbesLindesay/regexp
@@ -7168,9 +7171,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = parser
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## RegExp Handler
@@ -7565,15 +7568,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Handler
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(24)
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## toJSONSchema
@@ -7624,15 +7627,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = toJSONSchema
 
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(26)
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	    ## valid(template, data)
@@ -8080,15 +8083,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = valid
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(28)
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* global window, document, location, Event, setTimeout */
 	/*
@@ -8141,7 +8144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// 备份原生 XMLHttpRequest
 	window._XMLHttpRequest = window.XMLHttpRequest
 	window._ActiveXObject = window.ActiveXObject
-
+	//doc 模拟事件(为了ie)
 	/*
 	    PhantomJS
 	    TypeError: '[object EventConstructor]' is not a constructor (evaluating 'new Event("readystatechange")')
@@ -8152,7 +8155,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	try {
 	    new window.Event('custom')
 	} catch (exception) {
-	    window.Event = function(type, bubbles, cancelable, detail) {
+	    window.Event = function (type, bubbles, cancelable, detail) {
 	        var event = document.createEvent('CustomEvent') // MUST be 'CustomEvent'
 	        event.initCustomEvent(type, bubbles, cancelable, detail)
 	        return event
@@ -8242,7 +8245,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	}
 
-	MockXMLHttpRequest.setup = function(settings) {
+	MockXMLHttpRequest.setup = function (settings) {
 	    Util.extend(MockXMLHttpRequest._settings, settings)
 	    return MockXMLHttpRequest._settings
 	}
@@ -8260,7 +8263,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Util.extend(MockXMLHttpRequest.prototype, {
 	    // https://xhr.spec.whatwg.org/#the-open()-method
 	    // Sets the request method, request URL, and synchronous flag.
-	    open: function(method, url, async, username, password) {
+	    open: function (method, url, async, username, password) {
 	        var that = this
 
 	        Util.extend(this.custom, {
@@ -8275,7 +8278,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        })
 
-	        this.custom.timeout = function(timeout) {
+	        this.custom.timeout = function (timeout) {
 	            if (typeof timeout === 'number') return timeout
 	            if (typeof timeout === 'string' && !~timeout.indexOf('-')) return parseInt(timeout, 10)
 	            if (typeof timeout === 'string' && ~timeout.indexOf('-')) {
@@ -8294,10 +8297,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            for (var i = 0; i < XHR_RESPONSE_PROPERTIES.length; i++) {
 	                try {
 	                    that[XHR_RESPONSE_PROPERTIES[i]] = xhr[XHR_RESPONSE_PROPERTIES[i]]
-	                } catch (e) {}
+	                } catch (e) { }
 	            }
 	            // 触发 MockXMLHttpRequest 上的同名事件
-	            that.dispatchEvent(new Event(event.type /*, false, false, that*/ ))
+	            that.dispatchEvent(new Event(event.type /*, false, false, that*/))
 	        }
 
 	        // 如果未找到匹配的数据模板，则采用原生 XHR 发送请求。
@@ -8319,7 +8322,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            for (var j = 0; j < XHR_REQUEST_PROPERTIES.length; j++) {
 	                try {
 	                    xhr[XHR_REQUEST_PROPERTIES[j]] = that[XHR_REQUEST_PROPERTIES[j]]
-	                } catch (e) {}
+	                } catch (e) { }
 	            }
 
 	            return
@@ -8329,11 +8332,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.match = true
 	        this.custom.template = item
 	        this.readyState = MockXMLHttpRequest.OPENED
-	        this.dispatchEvent(new Event('readystatechange' /*, false, false, this*/ ))
+	        this.dispatchEvent(new Event('readystatechange' /*, false, false, this*/))
 	    },
 	    // https://xhr.spec.whatwg.org/#the-setrequestheader()-method
 	    // Combines a header in author request headers.
-	    setRequestHeader: function(name, value) {
+	    setRequestHeader: function (name, value) {
 	        // 原生 XHR
 	        if (!this.match) {
 	            this.custom.xhr.setRequestHeader(name, value)
@@ -8366,16 +8369,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.setRequestHeader('X-Requested-With', 'MockXMLHttpRequest')
 
 	        // loadstart The fetch initiates.
-	        this.dispatchEvent(new Event('loadstart' /*, false, false, this*/ ))
+	        this.dispatchEvent(new Event('loadstart' /*, false, false, this*/))
 
 	        if (this.custom.async) setTimeout(done, this.custom.timeout) // 异步
 	        else done() // 同步
 
 	        function done() {
 	            that.readyState = MockXMLHttpRequest.HEADERS_RECEIVED
-	            that.dispatchEvent(new Event('readystatechange' /*, false, false, that*/ ))
+	            that.dispatchEvent(new Event('readystatechange' /*, false, false, that*/))
 	            that.readyState = MockXMLHttpRequest.LOADING
-	            that.dispatchEvent(new Event('readystatechange' /*, false, false, that*/ ))
+	            that.dispatchEvent(new Event('readystatechange' /*, false, false, that*/))
 
 	            that.status = 200
 	            that.statusText = HTTP_STATUS_CODES[200]
@@ -8387,9 +8390,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            )
 
 	            that.readyState = MockXMLHttpRequest.DONE
-	            that.dispatchEvent(new Event('readystatechange' /*, false, false, that*/ ))
-	            that.dispatchEvent(new Event('load' /*, false, false, that*/ ));
-	            that.dispatchEvent(new Event('loadend' /*, false, false, that*/ ));
+	            that.dispatchEvent(new Event('readystatechange' /*, false, false, that*/))
+	            that.dispatchEvent(new Event('load' /*, false, false, that*/));
+	            that.dispatchEvent(new Event('loadend' /*, false, false, that*/));
 	        }
 	    },
 	    // https://xhr.spec.whatwg.org/#the-abort()-method
@@ -8403,8 +8406,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        // 拦截 XHR
 	        this.readyState = MockXMLHttpRequest.UNSENT
-	        this.dispatchEvent(new Event('abort', false, false, this))
-	        this.dispatchEvent(new Event('error', false, false, this))
+	        try {
+	            this.dispatchEvent(new Event('abort', false, false, this))
+	            this.dispatchEvent(new Event('error', false, false, this))
+	        } catch (error) {
+	            this.dispatchEvent(new Event('abort', { bubbles: false, cancelable: false, composed: this }))
+	            this.dispatchEvent(new Event('error', { bubbles: false, cancelable: false, composed: this }))
+	        }
 	    }
 	})
 
@@ -8414,7 +8422,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    status: MockXMLHttpRequest.UNSENT,
 	    statusText: '',
 	    // https://xhr.spec.whatwg.org/#the-getresponseheader()-method
-	    getResponseHeader: function(name) {
+	    getResponseHeader: function (name) {
 	        // 原生 XHR
 	        if (!this.match) {
 	            return this.custom.xhr.getResponseHeader(name)
@@ -8425,7 +8433,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    // https://xhr.spec.whatwg.org/#the-getallresponseheaders()-method
 	    // http://www.utf8-chartable.de/
-	    getAllResponseHeaders: function() {
+	    getAllResponseHeaders: function () {
 	        // 原生 XHR
 	        if (!this.match) {
 	            return this.custom.xhr.getAllResponseHeaders()
@@ -8440,7 +8448,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return headers
 	    },
-	    overrideMimeType: function( /*mime*/ ) {},
+	    overrideMimeType: function ( /*mime*/) { },
 	    responseType: '', // '', 'text', 'arraybuffer', 'blob', 'document', 'json'
 	    response: null,
 	    responseText: '',
@@ -8475,7 +8483,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Inspired by jQuery
 	function createNativeXMLHttpRequest() {
-	    var isLocal = function() {
+	    var isLocal = function () {
 	        var rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/
 	        var rurl = /^([\w.+-]+:)(?:\/\/([^\/?#:]*)(?::(\d+)|)|)/
 	        var ajaxLocation = location.href
@@ -8489,13 +8497,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    function createStandardXHR() {
 	        try {
 	            return new window._XMLHttpRequest();
-	        } catch (e) {}
+	        } catch (e) { }
 	    }
 
 	    function createActiveXHR() {
 	        try {
 	            return new window._ActiveXObject("Microsoft.XMLHTTP");
-	        } catch (e) {}
+	        } catch (e) { }
 	    }
 	}
 
@@ -8533,7 +8541,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = MockXMLHttpRequest
 
-/***/ }
+
+/***/ })
 /******/ ])
 });
 ;
