@@ -5,7 +5,7 @@ var Random = require('./mock/random')
 var RE = require('./mock/regexp')
 var toJSONSchema = require('./mock/schema')
 var valid = require('./mock/valid')
-
+//doc 先定义自己的xhr
 var XHR
 if (typeof window !== 'undefined') XHR = require('./mock/xhr')
 
@@ -54,8 +54,10 @@ Mock.mock = function(rurl, rtype, template) {
         template = rtype
         rtype = undefined
     }
+    //doc 把浏览器自带的,代替为自己的
     // 拦截 XHR
     if (XHR) window.XMLHttpRequest = XHR
+    //doc 保存模拟的请求值
     Mock._mocked[rurl + (rtype || '')] = {
         rurl: rurl,
         rtype: rtype,
